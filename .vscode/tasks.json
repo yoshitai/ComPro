@@ -1,29 +1,33 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "C/C++: g++-9 compile file",
-            "command": "/usr/bin/g++-9",
-            "args": [
-                "-std=gnu++17",
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++-9 アクティブなファイルのビルド",
+			"command": "/usr/bin/g++-9",
+			"args": [
+				"-std=gnu++17",
                 "-Wall",
                 "-Wextra",
                 "-Wshadow",
                 "-Wconversion",
                 "-fsanitize=undefined",
                 "-ggdb",
-                "${file}",
-                "-o",
-                "output.exe",
-            ],
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+				"${file}",
+				"-o",
+				"output.exe"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "コンパイラ: /usr/bin/g++-9"
+		}
+	]
 }

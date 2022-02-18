@@ -11,10 +11,10 @@
             "program": "${workspaceFolder}/output.exe",
             "args": [],
             "stopAtEntry": false,
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
             "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
             "setupCommands": [
                 {
                     "description": "gdb の再フォーマットを有効にする",
@@ -22,7 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++-9 compile file",
+            "preLaunchTask": "C/C++: g++-9 アクティブなファイルのビルド",
             "miDebuggerPath": "/usr/bin/gdb"
         }
     ]

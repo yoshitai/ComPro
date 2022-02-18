@@ -17,16 +17,18 @@ int main() {
     cin >> N >> K;
     vector<int> c(N);
     rep(i, N) cin >> c[i];
-
+    map<int, int> count;
     set<int> color;
     for(int i = 0; i < K; ++i) {
+        count[c[i]]++;
         color.insert(c[i]);
     }
     int ans = (int) color.size();
-    cout << ans << endl;
     for(int i = K; i < N; ++i) {
-        cout << c[i-K] << endl;
+        count[c[i-K]]--;
+        if(count[c[i-K]] == 0) color.erase(c[i-K]);
         color.insert(c[i]);
+        count[c[i]]++;
         ans = max(ans, (int)color.size());
     }
 
